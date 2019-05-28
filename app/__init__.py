@@ -1,9 +1,8 @@
-from flask import Flask
+from connexion.resolver import RestyResolver
+import connexion
 
 def create_app():
-    app = Flask(__name__)
-
-    from .views import app_foo
-    app.register_blueprint(app_foo, url_prefix="/foo")
+    app = connexion.FlaskApp(__name__, specification_dir='swagger/')
+    app.add_api('swagger.yml')
 
     return app

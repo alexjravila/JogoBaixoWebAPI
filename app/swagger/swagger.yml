@@ -1,0 +1,50 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+paths:
+  /foo:
+    get:
+      tags:
+      - "getallfoo"
+      description: "Get all foos"
+      x-swagger-router-controller: "app.views.foo"
+      operationId: "get_all"
+      responses:
+        200:
+          description: "List of foos"
+          schema:
+            description: "Array with foo names"
+            type: "array"
+            items:
+              type: "string"
+  /foo/{name}:
+    get:
+      tags:
+      - "searchfoo"
+      parameters: 
+      - name: "name"
+        in: "path"
+        description: "Name to be searched"
+        required: true
+        type: "string"
+      description: "Search foo by name"
+      x-swagger-router-controller: "app.views.foo"
+      operationId: "get_by_name"
+      responses:
+        200:
+          description: "Found foos"
+          schema:
+            description: "Array with foo names"
+            type: "array"
+            items:
+              type: "string"
+      
