@@ -6,6 +6,7 @@ def get_all():
 
     response = jsonify(data)
     response.status_code = HTTPStatus.OK
+
     return response
 
 def get_by_name(name):

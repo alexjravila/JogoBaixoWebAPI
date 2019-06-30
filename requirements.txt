@@ -1,3 +1,4 @@
 flask
 connexion[swagger-ui]
 pytest
+sentry-sdk[flask]
