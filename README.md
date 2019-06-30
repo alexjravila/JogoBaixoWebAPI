@@ -8,6 +8,7 @@ Este projeto é uma Web API desenvolvida em Python para o projeto **Jogo baixo**
 - Swagger;
 - Pytest;
 - Coverage.
+- Sentry.io
 
 ## Getting start
 1. Acessar ambiente virtual (ver arquivo na task de como fazer isso);
@@ -41,6 +42,7 @@ Este projeto é uma Web API desenvolvida em Python para o projeto **Jogo baixo**
 1. Toda pasta dentro da pasta app deve ter um arquivo **__init\__.py**. Isso indica que a pasta é um módulo e pode ser devidamente importado e utilizado por outros arquivos de código.
 2. Para injetar parâmetros nos testes automatizados, deve ser definido uma fixture no arquivo **conftest.py**. O nome do parâmetro deve ser o mesmo da fixture (ver o caso do parâmetro client nos testes da view).
 3. Todo endpoint deve ser definido no arquivo **swagger.yml**.
+4. Todos os erros que acontecem dentro da aplicação são capturados e enviados para uma plataforma chamada de sentry.io
 
 ## Links para estudos
 - [Tutorial Flask](https://code.tutsplus.com/pt/tutorials/building-restful-apis-with-flask-diy--cms-26625)
