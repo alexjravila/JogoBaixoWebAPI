@@ -37,6 +37,20 @@ Este projeto é uma Web API desenvolvida em Python para o projeto **Jogo baixo**
     coverage report
     ```
 
+## Docker
+ Existe a possível rodar a aplicação e container do Docker. Utilizando um exemplo simples de container baseado em uma imagem do Python 3 Alpine. Todas as configuração do container então no Dockfile da aplicação.
+ 
+ 1.  O primeiro passo é desabilitar o modo DEBUG no arquivo **run.py**.
+
+ 2. É necessario fazer o build da imagem, para isso é só executar o comando abaixo:
+     ``` sh
+    docker build -f Dockerfile -t jbapi/python:3-alpine .
+    ```
+ 3. Depois da imagem construida, é possível criar um container tendo ela com base e executar a aplicação:
+     ``` sh
+    docker run -p 8080:5000 jbapi/python:3-alpine
+    ```
+
 ## Observações
 1. Toda pasta dentro da pasta app deve ter um arquivo **__init\__.py**. Isso indica que a pasta é um módulo e pode ser devidamente importado e utilizado por outros arquivos de código.
 2. Para injetar parâmetros nos testes automatizados, deve ser definido uma fixture no arquivo **conftest.py**. O nome do parâmetro deve ser o mesmo da fixture (ver o caso do parâmetro client nos testes da view).
